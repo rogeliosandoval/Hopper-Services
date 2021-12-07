@@ -1,5 +1,5 @@
 {
-	"name": "translator",
+	"name": "practice-website",
 	"version": "0.0.1",
 	"scripts": {
 		"dev": "svelte-kit dev",
@@ -22,5 +22,8 @@
 		"svelte-preprocess": "^4.9.8",
 		"tailwindcss": "^2.2.16"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"simple-svelte-slideshow": "^1.0.0"
+	}
 }
