@@ -1,44 +1,41 @@
+<link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <script>
-    import {fade} from 'svelte/transition'
+    import { images } from "$lib/components/imageData";
+    import Slide from "$lib/components/slide.svelte";
+    import Caption from "$lib/components/caption.svelte";
+    import Thumbnail from "$lib/components/thumbnail.svelte";
+    import Certifications from "$lib/components/certifications.svelte";
+    import MiniNav from "$lib/components/miniNav.svelte";
+    import MiniFoot from "$lib/components/miniFoot.svelte";
 
-    let isActive = false;
+    let imageShowIndex = 0;
+    $: console.log(imageShowIndex);
 
-    const carouselPhotos = [
-		'stock/yard1.jpg',
-		'stock/yard2.jpg',
-		'stock/yard3.jpg',
-        'stock/yard4.jpg'
-	]
-	
-	let index = 0
-	
-	const next = () => {
-		index = (index + 1) % carouselPhotos.length
-	}
+    const prevSlide = () => {
+        if (imageShowIndex === 0) {
+            imageShowIndex = images.length-1
+        } else {
+            imageShowIndex -= 1;
+        }
+    }
+
+    const nextSlide = () => {
+        if (imageShowIndex === images.length-1) {
+            imageShowIndex = 0;
+        } else {
+            imageShowIndex += 1;
+        }
+    }
+
+    const goToSlide = (idNumber) => imageShowIndex = idNumber;
+
 </script>
 
 <section class="pt-20">
-    <div class="miniNav">
-        <div class="modGrid">
-            <div class="dropdown shrink">
-                <button on:click={() => isActive = !isActive} class="dropbtn"><i class="fa fa-navicon"></i></button>
-                <div id="myDropdown" on:click={() => isActive = !isActive} class:show={isActive} class="dropdown-content">
-                    <a href="#">Home</a>
-                    <a href="#">Reviews</a>
-                    <a href="#">Services</a>
-                    <a href="#">Careers</a>
-                    <a href="#">About</a>
-                    <a href="#">FAQ</a>
-                    <a href="#">Contact</a>
-                </div>
-            </div>
-        
-            <!-- <div class="text-white bg-green-800 font-bold text-3xl text-center tracking-wider expand">Hopper Services</div> -->
-            <div class="expand">
-                <img class="logo" alt="logo" src="logo.png">
-            </div>
-        </div>
-    </div>
+
+    <MiniNav />
     
     <div class="text-center pt-8 px-7">
         <p class="basicText">There is always a beautiful yard under the tall grass. Let us be your go-to lawn service company where we strive to bring out the best of your yard.</p>
@@ -59,25 +56,68 @@
     <div class="text-center">
         <p class="titleText tracking-wider">Check out some of our clients!</p>
     </div>
-    
-    <div class="">
-        {#each [carouselPhotos[index]] as src (index)}
-            <img class="slideImage border-solid border-4 border-black" transition:fade src={src} alt="" />	
-        {/each}
-        <button class="slideButton p-2 font-bold tracking-wider border-solid border-4 bg-white border-black" on:click={next}>Next!</button>
-    </div>
-</section>
 
+    <!-- Container for the image gallery -->
+    <div class="container">
+        {#each images as {id, name, imgUrl, attribution} }
+        <Slide  image={imgUrl}
+                altTag={name}
+                attr={attribution} 
+                slideNumber={id+1}
+                totalSlides={images.length} 
+                imageShowing={id === imageShowIndex} />
+        {/each}
+    </div>
+    
+    <Caption caption={images[imageShowIndex].name} on:prevClick={prevSlide} on:nextClick={nextSlide} />
+
+    <div class="thumbnails-row">
+        {#each images as {id, imgUrl, name}}
+            <Thumbnail  thumbImg={imgUrl}
+                        altTag={name}
+                        selected={id === imageShowIndex}
+                        on:click={() => goToSlide(id)} />
+        {/each}
+    </div>
+
+    <div class="text-center pt-3 px-6">
+        <p class="basicText">
+            When you book an appointment with us we make sure to come prepared!
+        </p>
+    </div>
+
+    <div class="text-center py-8">
+        <a class="bg-green-500 hover:bg-green-400 text-black font-bold py-2 px-4 border-b-4 border-black hover:border-green-500 rounded" href="#">Schedule An Appointment <i class="text-white fa fa-file-text"></i></a>
+    </div>
+
+    <Certifications />
+
+    <div class="p-5 grid grid-rows-1">
+        <div class="pb-2 text-center">
+            <img alt="Lawn Mower" class="mower" src="stock/mower2.jpg">
+        </div>
+        <div class="text-center">
+            <p class="basicText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    </div>
+
+    <MiniFoot />
+
+</section>
 
 <style>
 
+    .container {
+        position: relative;
+    }
+
+    .thumbnails-row {
+        width: 100%;
+        display: flex;
+        align-self: flex-end;
+    }
+
     @media screen and (min-width:0px) and (max-width:640px) {
-        .miniNav {
-            position: fixed;
-            top: 0px;
-            width: 100%;
-        }
-        
         .basicText {
             color: white;
             font-family: Verdana, sans-serif;
@@ -86,14 +126,9 @@
 
         .titleText {
             font-weight: bold;
+            font-family: Verdana, sans-serif;
             color: white;
-            font-size: 35px;
-        }
-    }
-        
-    @media screen and (min-width:640px) {
-        .miniNav {
-            display: none;
+            font-size: 18px;
         }
     }
 
@@ -101,76 +136,4 @@
         border: 3px solid black
     }
 
-    .slideImage, .slideButton {
-		position: absolute;
-	}
-
-    .modGrid {
-        display: table;
-        table-layout: auto;
-        width: 100%;
-    }
-
-    .expand {
-        background-image: linear-gradient(#4CAF50,green);
-        display: table-cell;
-        width: 100%;
-        max-width: 0;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .shrink {
-        display: table-cell;
-        white-space: nowrap;
-    }
-
-    .logo {
-        /* position:fixed; top:0; right:0; */
-		height: 175px;
-		width: 145px;
-		padding: 1px;
-		position: absolute;
-		margin-top: -75px;
-        margin-left: 80px;
-    }
-
-    .dropbtn {
-        background-image: linear-gradient(#4CAF50,green);
-        color: white;
-        padding: 16px;
-        font-size: 40px;
-        border: none;
-        cursor: pointer;
-    }
-    
-    .dropbtn:hover, .dropbtn:focus {
-        background-color: #3e8e41;
-    }
-    
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-    
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        overflow: auto;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    }
-    
-    .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-    }
-    
-    .dropdown a:hover {background-color: #f1f1f1}
-    
-    .show {display:block;}
 </style>
