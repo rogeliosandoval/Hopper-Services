@@ -9,7 +9,7 @@
 <slot />
 
 <style>
-	@media screen and (max-width:640px) {
+	@media screen and (max-width:767px) {
 		.nav {
 			display: none;
 		}

@@ -3,13 +3,13 @@
 </script>
 
 <style>
-    @media screen and (min-width:640px) {
+    @media screen and (min-width:768px) {
         .miniNav {
             display: none;
         }
     }
 
-    @media screen and (min-width:0px) and (max-width:640px) {
+    @media screen and (min-width:0px) and (max-width:768px) {
         .miniNav {
             position: fixed;
             z-index: 1;
