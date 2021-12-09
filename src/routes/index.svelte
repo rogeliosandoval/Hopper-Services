@@ -33,52 +33,78 @@
 
 </script>
 
-<section class="pt-20">
+<section class="pt-20 md:pt-0">
 
     <MiniNav />
     
-    <div class="text-center pt-8 px-7">
-        <p class="basicText">There is always a beautiful yard under the tall grass. Let us be your go-to lawn service company where we strive to bring out the best of your yard.</p>
+    <div class="text-center pt-8 px-7 md:pb-11 xl:px-72">
+        <p class="basicText tracking-widest">"The grass is <b class="text-green-200">GREENEST</b> where we <b class="text-blue-300">WATER</b> it"</p>
     </div>
     
-    <div class="p-5 grid grid-rows-1 gap-x-5">
+    <div class="p-5 grid grid-rows-1 gap-x-5 md:grid-cols-2 md:bg-green-100">
     
-        <div class="pb-2">
+        <!-- <div class="pb-2 mx-auto xl:pt-14">
             <img class="mower" alt="Lawn Mower" src="stock/mower1.jpg">
+        </div> -->
+
+        <div class="img-move-wrapper">
+            <img alt="Lawn Mower" src="stock/volunteer.jpeg" class="mower img-move img-move-1 img-fluid">
+            <img alt="Lawn Mower" src="stock/worker.jpeg" class="mower img-move img-move-2 img-fluid">
+            <!-- this image is a placeholder so that the container has a responsive height. I am also hiding it on mobile because it is not needed when stacked. Here is more info on why this is needed > https://stackoverflow.com/questions/6319500/how-to-make-the-wrapping-div-element-with-relative-position-match-child-elements?rq=1 -->
+            <img alt="Lawn Mower" src="stock/mower1.jpg" class="img-fluid invisible d-none d-md-block">
         </div>
     
-        <div class="text-center">
-            <p class="basicText">We use great quality tools that make sure we get the job done as clean as we possibly can. We leave absolutely nothing behind besides a fantastic looking yard!</p>
+        <div class="text-center xl:text-left xl:p-16">
+            <p class="basicText2 md:py-10">We use great quality tools that make sure we get the job done as clean as we possibly can. We leave absolutely nothing behind besides a fantastic looking yard!</p>
+            <br class="para2">
+            <p class="para2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis tristique sollicitudin nibh sit amet commodo. Risus viverra adipiscing at in. Tempus iaculis urna id volutpat</p>
+            <br class="para3">
+            <div class="para3 grid grid-cols-2 pt-10">
+                <div class="text-center py-8">
+                    <div align="center"><a class="mainButton" href="#" target="_blank" rel="nofollow noopener noreferrer" draggable="false"><i class="text-white fa fa-file-text"></i> Schedule An Appointment</a></div>
+                </div>
+                <div class="text-center py-8">
+                    <div align="center"><a class="mainButton" href="#" target="_blank" rel="nofollow noopener noreferrer" draggable="false"><i class="text-white fa fa-phone"></i> Contact Us</a></div>
+                </div>
+            </div>
         </div>
     
     </div>
     
-    <div class="text-center">
-        <p class="titleText tracking-wider">Check out some of our clients!</p>
+    <div class="text-center md:py-10 xl:grid xl:grid-cols-2 xl:gap-x-14">
+        <div class="xl:p-10">
+            <main>
+                <!-- Container for the image gallery -->
+                <div class="container mx-auto">
+                    {#each images as {id, name, imgUrl, attribution} }
+                    <Slide  image={imgUrl}
+                            altTag={name}
+                            attr={attribution} 
+                            slideNumber={id+1}
+                            totalSlides={images.length} 
+                            imageShowing={id === imageShowIndex} />
+                    {/each}
+                </div>
+                
+                <Caption caption={images[imageShowIndex].name} on:prevClick={prevSlide} on:nextClick={nextSlide} />
+            
+                <div class="thumbnails-row">
+                    {#each images as {id, imgUrl, name}}
+                        <Thumbnail  thumbImg={imgUrl}
+                                    altTag={name}
+                                    selected={id === imageShowIndex}
+                                    on:click={() => goToSlide(id)} />
+                    {/each}
+                </div>
+        
+            </main>
+        </div>
+
+        <div class="xl:p-10">
+            <p class="titleText tracking-wider md:tracking-tight pr-9">Testimonials</p>
+        </div>
     </div>
 
-    <!-- Container for the image gallery -->
-    <div class="container">
-        {#each images as {id, name, imgUrl, attribution} }
-        <Slide  image={imgUrl}
-                altTag={name}
-                attr={attribution} 
-                slideNumber={id+1}
-                totalSlides={images.length} 
-                imageShowing={id === imageShowIndex} />
-        {/each}
-    </div>
-    
-    <Caption caption={images[imageShowIndex].name} on:prevClick={prevSlide} on:nextClick={nextSlide} />
-
-    <div class="thumbnails-row">
-        {#each images as {id, imgUrl, name}}
-            <Thumbnail  thumbImg={imgUrl}
-                        altTag={name}
-                        selected={id === imageShowIndex}
-                        on:click={() => goToSlide(id)} />
-        {/each}
-    </div>
 
     <div class="text-center pt-3 px-6">
         <p class="basicText">
@@ -87,7 +113,9 @@
     </div>
 
     <div class="text-center py-8">
-        <a class="bg-green-500 hover:bg-green-400 text-black font-bold py-2 px-4 border-b-4 border-black hover:border-green-500 rounded" href="#">Schedule An Appointment <i class="text-white fa fa-file-text"></i></a>
+        <div class="text-center py-8">
+            <div align="center"><a class="mainButton" href="#" target="_blank" rel="nofollow noopener noreferrer" draggable="false"><i class="text-white fa fa-file-text"></i> Schedule An Appointment</a></div>
+        </div>
     </div>
 
     <Certifications />
@@ -117,9 +145,37 @@
         align-self: flex-end;
     }
 
-    @media screen and (min-width:0px) and (max-width:640px) {
+    .mower {
+        border: 3px solid black
+    }
+
+    @media screen and (min-width:0px) and (max-width:768px) {
+        main {
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            margin: 10% auto;
+            background-color: #222;
+            box-shadow: 0 0 10px black;
+        }	
+
+        .para2 {
+            display: none;
+        }
+
+        .mower {
+            width: 350px;
+            height: 250px;
+        }
+
         .basicText {
             color: white;
+            font-family: Verdana, sans-serif;
+            font-size: 17px;
+        }
+
+        .basicText2 {
+            color:white;
             font-family: Verdana, sans-serif;
             font-size: 17px;
         }
@@ -132,8 +188,198 @@
         }
     }
 
-    .mower {
-        border: 3px solid black
+    @media screen and (min-width:768px) and (max-width:1024px) {
+        main {
+            width: 85vw;
+            display: flex;
+            flex-direction: column;
+            margin: 10% auto;
+            background-color: #222;
+            box-shadow: 0 0 10px black;
+        }	
+
+        .para2 {
+            display: none;
+        }
+
+        .basicText {
+            color:white;
+            font-family: Verdana, sans-serif;
+            font-size: 25px;
+        }
+
+        .basicText2 {
+            color:black;
+            font-family: Verdana, sans-serif;
+            font-size: 25px;
+        }
+
+        .titleText {
+            font-weight: bold;
+            font-family: Verdana, sans-serif;
+            color: white;
+            font-size: 50px;
+        }
+    }
+
+    @media screen and (min-width:1024px) and (max-width:1280px) {
+        main {
+            width: 75vw;
+            display: flex;
+            flex-direction: column;
+            margin: 10% auto;
+            background-color: #222;
+            box-shadow: 0 0 10px black;
+        }	
+
+        .para2 {
+            display: inline-block;
+            color:black;
+            font-family: Verdana, sans-serif;
+            font-size: 20px;
+        }
+
+        .basicText {
+            color:white;
+            font-family: Verdana, sans-serif;
+            font-size: 25px;
+        }
+
+        .basicText2 {
+            color:black;
+            font-family: Verdana, sans-serif;
+            font-size: 25px;
+        }
+
+        .titleText {
+            font-weight: bold;
+            font-family: Verdana, sans-serif;
+            color: white;
+            font-size: 50px;
+        }
+    }
+
+    @media screen and (min-width:1280px) and (max-width:1536px) {
+        main {
+            width: 65vw;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            background-color: #222;
+            box-shadow: 0 0 10px black;
+        }	
+
+        .para2 {
+            display: inline-block;
+            color:black;
+            font-family: Verdana, sans-serif;
+            font-size: 20px;
+        }
+
+        .basicText {
+            color:white;
+            font-family: Verdana, sans-serif;
+            font-size: 25px;
+        }
+
+        .basicText2 {
+            color:black;
+            font-family: Verdana, sans-serif;
+            font-size: 25px;
+        }
+
+        .titleText {
+            font-weight: bold;
+            font-family: Verdana, sans-serif;
+            color: white;
+            font-size: 50px;
+        }
+    }
+
+    @media screen and (min-width:1536px) {
+        main {
+            width: 50vw;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            background-color: #222;
+            box-shadow: 0 0 35px black;
+        }
+
+        .mainButton {
+            color: #fff !important;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: green;
+            padding: 20px;
+            border-radius: 50px;
+            display: inline-block;
+            border: none;
+            transition: all 0.4s ease 0s;
+        }
+
+        .mainButton:hover {
+            background: darkgreen;
+            text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+            box-shadow: 0 0 35px black;
+            -webkit-box-shadow: 0px 5px 60px -10px rgba(0,0,0,0.57);
+            -moz-box-shadow: 0px 5px 60px -10px rgba(0,0,0,0.57);
+            transition: all 0.4s ease 0s;
+        }
+
+        .img-move {
+            position:absolute;
+            width:55%;
+        }
+
+        .img-move-1 {
+            left:0;
+        }
+
+        .img-move-2 {
+            right:0;  
+            bottom:0;
+        }
+
+        .img-move-wrapper {
+            /* border:1px solid red; */
+            position:relative;
+            overflow:hidden;
+            max-width:1140px;
+            margin:0 auto;
+        }
+
+        .mower {
+            width: 600px;
+            height: 450px;
+            
+        }
+
+        .para2 {
+            display: inline-block;
+            color:black;
+            font-family: Verdana, sans-serif;
+            font-size: 20px;
+        }
+
+        .basicText {
+            color:white;
+            font-family: Verdana, sans-serif;
+            font-size: 35px;
+        }
+
+        .basicText2 {
+            color:black;
+            font-family: Verdana, sans-serif;
+            font-size: 25px;
+        }
+
+        .titleText {
+            font-weight: bold;
+            font-family: Verdana, sans-serif;
+            color: white;
+            font-size: 50px;
+        }
     }
 
 </style>
