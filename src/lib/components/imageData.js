@@ -1,25 +1,25 @@
 export const images = [
     {
         id: 0,
-        name: "Yard 1",
+        name: "Bush Trim/Signature Lawn Service",
         imgUrl: "stock/yard1.jpg",
         attribution: "https://pixabay.com/"
     },
     {
         id: 1,
-        name: "Yard 2",
+        name: "Signature Yard Service",
         imgUrl: "stock/yard2.jpg",
         attribution: "https://pixabay.com/"
     },
     {
         id: 2,
-        name: "Yard 3",
+        name: "Bush Trim/Signature Yard Service/Plant Care",
         imgUrl: "stock/yard3.jpg",
         attribution: "https://pixabay.com/"
     },
     {
         id: 3,
-        name: "Yard 4",
+        name: "Signature Yard Service For Commercial",
         imgUrl: "stock/yard4.jpg",
         attribution: "https://pixabay.com/"
     }
