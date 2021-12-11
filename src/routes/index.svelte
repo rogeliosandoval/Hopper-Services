@@ -9,9 +9,18 @@
     import Certifications from "$lib/components/certifications.svelte";
     import MiniNav from "$lib/components/miniNav.svelte";
     import MiniFoot from "$lib/components/miniFoot.svelte";
+    import Testimonials from "$lib/components/testimonials.svelte";
+    import BackToTop from "$lib/components/backToTop.svelte";
 
     let imageShowIndex = 0;
-    $: console.log(imageShowIndex);
+    // $: console.log(imageShowIndex);
+
+    let tada = false;
+    let y;
+
+    $: tada = y > 2000;
+    //const handleMouseenter = () => tada = true;
+    //const handleMouseleave = () => tada = false;    
 
     const prevSlide = () => {
         if (imageShowIndex === 0) {
@@ -33,9 +42,27 @@
 
 </script>
 
+<svelte:window bind:scrollY={y} />
+
+<img
+  class="coolImage"
+	class:curious={tada}
+	alt="TADA!"
+	src="lawnmower.png"
+>
+
+<img
+  class="coolImage2"
+	class:curious2={tada}
+	alt="TADA!"
+	src="trophy.png"
+>
+
 <section class="pt-20 md:pt-0">
 
     <MiniNav />
+
+    <BackToTop />
     
     <div class="text-center pt-8 px-7 md:pb-11 xl:px-72">
         <p class="basicText tracking-widest">"The grass is <b class="text-green-200">GREENEST</b> where we <b class="text-blue-300">WATER</b> it"</p>
@@ -71,7 +98,7 @@
     
     </div>
     
-    <div class="text-center md:py-10 xl:grid xl:grid-cols-2 xl:gap-x-14">
+    <div class="text-center md:py-10 xl:grid xl:grid-cols-2 xl:gap-x-16">
         <div class="xl:p-10">
             <main>
                 <!-- Container for the image gallery -->
@@ -101,30 +128,41 @@
         </div>
 
         <div class="xl:p-10">
-            <p class="titleText tracking-wider md:tracking-tight pr-9">Testimonials</p>
+            <p class="titleText tracking-wider md:tracking-tight pr-9 pb-10 xl:tracking-widest">Testimonials</p>
+            <Testimonials />
         </div>
     </div>
 
 
     <div class="text-center pt-3 px-6">
-        <p class="basicText">
-            When you book an appointment with us we make sure to come prepared!
+        <p class="basicText tracking-wider font-semibold">
+            When you book an appointment with us, we make sure to come prepared!
         </p>
     </div>
 
     <div class="text-center py-8">
         <div class="text-center py-8">
-            <div align="center"><a class="mainButton" href="#" target="_blank" rel="nofollow noopener noreferrer" draggable="false"><i class="text-white fa fa-file-text"></i> Schedule An Appointment</a></div>
+            <div align="center"><a class="mainButton2" href="#" target="_blank" rel="nofollow noopener noreferrer" draggable="false"><i class="text-black fa fa-file-text"></i> Schedule An Appointment</a></div>
         </div>
     </div>
 
-    <Certifications />
+    <div>
+        <Certifications />
+    </div>
 
-    <div class="p-5 grid grid-rows-1">
-        <div class="pb-2 text-center">
-            <img alt="Lawn Mower" class="mower" src="stock/mower2.jpg">
+
+    <div class="text-center xl:py-14">
+        <p class="basicText tracking-wider">
+            "We take our <b class="text-yellow-300">CLIENTS</b> seriously"
+        </p>
+    </div>
+
+    <div class="grid grid-rows-1">
+        <div class="xl:p-10 text-center xl:grid xl:grid-cols-2 bg-green-100">
+            <img alt="Lawn Mower" class="mower2 mx-auto" src="stock/mower2.jpg">
+            <img alt="Team" class="mower2 mx-auto" src="stock/team.jpeg">
         </div>
-        <div class="text-center">
+        <div class="text-left xl:px-24 xl:py-5">
             <p class="basicText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
     </div>
@@ -134,7 +172,6 @@
 </section>
 
 <style>
-
     .container {
         position: relative;
     }
@@ -145,8 +182,8 @@
         align-self: flex-end;
     }
 
-    .mower {
-        border: 3px solid black
+    .mower, .mower2 {
+        border: 3px solid black;
     }
 
     @media screen and (min-width:0px) and (max-width:768px) {
@@ -307,6 +344,7 @@
         }
 
         .mainButton {
+            font-family: Verdana, sans-serif;
             color: #fff !important;
             text-transform: uppercase;
             text-decoration: none;
@@ -324,6 +362,28 @@
             box-shadow: 0 0 35px black;
             -webkit-box-shadow: 0px 5px 60px -10px rgba(0,0,0,0.57);
             -moz-box-shadow: 0px 5px 60px -10px rgba(0,0,0,0.57);
+            transition: all 0.4s ease 0s;
+        }
+
+        .mainButton2 {
+            font-family: Verdana, sans-serif;
+            font-size: 30px;
+            color: #000000 !important;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: lightgreen;
+            padding: 20px;
+            border-radius: 50px;
+            display: inline-block;
+            border: none;
+            transition: all 0.4s ease 0s;
+        }
+
+        .mainButton2:hover {
+            background: rgb(112, 184, 112);
+            box-shadow: 0 0 35px rgb(83, 136, 83);
+            -webkit-box-shadow: 0px 5px 60px -10px rgb(83, 136, 83);
+            -moz-box-shadow: 0px 5px 60px -10px rgb(83, 136, 83);
             transition: all 0.4s ease 0s;
         }
 
@@ -352,7 +412,11 @@
         .mower {
             width: 600px;
             height: 450px;
-            
+        }
+
+        .mower2 {
+            width: 650px;
+            height: 450px;
         }
 
         .para2 {
@@ -380,6 +444,32 @@
             color: white;
             font-size: 50px;
         }
+
+        .coolImage {
+	        position: absolute;
+            top: 270%;
+            left: -4%;
+		    transform: translate(-100%, 0) rotate(-30deg);
+		    transform-origin: 100% 100%;
+		    transition: transform 0.4s;
+	    }
+
+        .curious {
+		    transform: translate(15%, 0) rotate(0deg);
+	    }
+
+        .coolImage2 {
+	        position: absolute;
+            top: 268%;
+            right: 3%;
+		    transform: translate(100%, 0) rotate(30deg);
+		    transform-origin: 100% 100%;
+		    transition: transform 0.4s;
+	    }
+
+        .curious2 {
+		    transform: translate(12%, 0) rotate(0deg);
+	    }
     }
 
 </style>

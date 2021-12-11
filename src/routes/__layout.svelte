@@ -7,10 +7,17 @@
 	<Navbar />
 </div>
 <slot />
+<div class="foot">
+	<Footer />
+</div>
 
 <style>
 	@media screen and (max-width:767px) {
 		.nav {
+			display: none;
+		}
+
+		.foot {
 			display: none;
 		}
 	}
