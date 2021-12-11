@@ -3,19 +3,12 @@
 </script>
 
 <style>
-    @media screen and (min-width:768px) {
-        .miniNav {
-            display: none;
-        }
-    }
 
-    @media screen and (min-width:0px) and (max-width:768px) {
-        .miniNav {
-            position: fixed;
-            z-index: 1;
-            top: 0px;
-            width: 100%;
-        }
+    .miniNav {
+        position: fixed;
+        z-index: 1;
+        top: 0px;
+        width: 100%;
     }
 
     .modGrid {
@@ -86,6 +79,12 @@
     .dropdown a:hover {background-color: #f1f1f1}
     
     .show {display:block;}
+
+    @media screen and (min-width:768px) {
+        .miniNav {
+            display: none;
+        }
+    }
 </style>
 
 <div class="miniNav">

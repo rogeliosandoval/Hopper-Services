@@ -1,9 +1,11 @@
+<script></script>
+
 <div class="mx-auto text-center py-2 sm:py-6 lg:py-12 font-sans">
-    <p class="title tracking-widest bg-green-500 p-4">Our Certifications</p>
+    <p class="title tracking-widest bg-green-800 p-4">Our Certifications</p>
 </div>
 
-<div class="container mx-auto">
-  <div class="certBox grid grid-cols-5 gap-4 text-center p-5">
+<div class="container mx-auto pt-10">
+  <div class="certBox grid grid-cols-5 gap-2 text-center p-5">
 
     <div class="mx-auto">
       <img alt="cert1" src="cert.png">
@@ -69,17 +71,58 @@
 </div>
 
 <style>
-    .certBox {
-        color: green;
-        /* background-image: url("wood.jpg"); */
-        /* background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover; */
-    }
+  .certBox {
+    /* color: green; */
+    border: 5px solid yellow;
+    background-image: url("wood.jpg");
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-size: cover;
+  }
 
+  @media screen and (min-width:0px) and (max-width:768px) {
+
+  }
+
+  @media screen and (min-width:768px) and (max-width:1024px) {
+
+  }
+
+  @media screen and (min-width:1024px) and (max-width:1280px) {
+
+  }
+
+  @media screen and (min-width:1280px) and (max-width:1536px) {
+
+  }
+
+  @media screen and (min-width:1536px) {
     .title {
-        font-weight: bold;
-        font-size: 15px;
-        font-family: Verdana, sans-serif;
+      color:white;
+      font-weight: semibold;
+      font-size: 50px;
+      font-family: Verdana, sans-serif;
     }
+  }
+
 </style>
+
+<!-- @media screen and (min-width:0px) and (max-width:768px) {
+
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+
+}
+
+@media screen and (min-width:1024px) and (max-width:1280px) {
+
+}
+
+@media screen and (min-width:1280px) and (max-width:1536px) {
+
+}
+
+@media screen and (min-width:1536px) {
+
+} -->
