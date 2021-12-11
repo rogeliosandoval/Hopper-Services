@@ -30,9 +30,9 @@
       transition: opacity 0.5s, visibility 0.5s;
       position: fixed;
       z-index: 99;
-      right: 20px;
+      right: 15px;
       user-select: none;
-      bottom: 20px;
+      bottom: 15px;
       color: white;
       background-color: black;
     }
