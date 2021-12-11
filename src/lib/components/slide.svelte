@@ -17,7 +17,7 @@
     .numbertext {
         color: #f2f2f2;
         position: absolute;
-        font-size: 12px;
+        font-size: 20px;
         padding: 8px 12px;
         top:0;
     }
