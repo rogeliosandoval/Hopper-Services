@@ -5,16 +5,13 @@
 </script>
 
 <style>
-    .thumbnails-row:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
 
-    /* Six columns side by side */
-    .column {
-        float: left;
-        width: 16.66%;
+    .thumbnail-container {
+        width: 25%;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    background-color: #ddd;
     }
 
     /* Add a transparency effect for thumnbail images */
@@ -34,6 +31,7 @@
 
     .active {
         opacity: 1;
+        padding: 5px;
     }
 </style>
 
