@@ -35,9 +35,9 @@
 </style>
 
 <div class="miniFoot">
-    <div class="grid grid-cols-3 bg-gray-700">
-        <div class="text-center"><a href="#" class="fa fa-facebook"></a></div>
-        <div class="text-center"><a href="#" class="fa fa-instagram"></a></div>
-        <div class="text-center"><a href="#" class="fa fa-youtube"></a></div>
+    <div class="flex flex-row bg-gray-700">
+        <div class="text-left"><a href="#" class="fa fa-facebook"></a></div>
+        <div class="text-left"><a href="#" class="fa fa-instagram"></a></div>
+        <div class="text-left"><a href="#" class="fa fa-youtube"></a></div>
     </div>
 </div>

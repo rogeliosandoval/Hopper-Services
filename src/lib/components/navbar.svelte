@@ -11,15 +11,28 @@
 	}
 
 	@media screen and (min-width:768px) and (max-width:1024px) {
+		.logo {
+			display: none;
+		}
 
+		.navText {
+			font-size: 15px;
+			font-style: italic;
+		}
 	}
 
 	@media screen and (min-width:1024px) and (max-width:1280px) {
-
+		.navText {
+			font-size: 25px;
+			font-style: italic;
+		}
 	}
 
 	@media screen and (min-width:1280px) and (max-width:1536px) {
-
+		.navText {
+			font-size: 25px;
+			font-style: italic;
+		}
 	}
 
 	@media screen and (min-width:1536px) {
