@@ -15,10 +15,6 @@
     let imageShowIndex = 0;
     // $: console.log(imageShowIndex);
 
-    let tada = false;
-    let y;
-
-    $: tada = y > 2000;
     //const handleMouseenter = () => tada = true;
     //const handleMouseleave = () => tada = false;    
 
@@ -42,22 +38,6 @@
 
 </script>
 
-<svelte:window bind:scrollY={y} />
-
-<img
-  class="coolImage"
-	class:curious={tada}
-	alt="TADA!"
-	src="lawnmower.png"
->
-
-<img
-  class="coolImage2"
-	class:curious2={tada}
-	alt="TADA!"
-	src="trophy.png"
->
-
 <section class="pt-20 md:pt-0">
 
     <MiniNav />
@@ -69,28 +49,24 @@
     </div>
     
     <div class="p-5 grid grid-rows-1 gap-x-5 md:grid-cols-2 md:bg-green-100">
-    
-        <!-- <div class="pb-2 mx-auto xl:pt-14">
-            <img class="mower" alt="Lawn Mower" src="stock/mower1.jpg">
-        </div> -->
 
-        <div class="img-move-wrapper">
+        <div class="img-move-wrapper mx-auto">
             <img alt="Lawn Mower" src="stock/volunteer.jpeg" class="mower img-move img-move-1 img-fluid">
-            <img alt="Lawn Mower" src="stock/worker.jpeg" class="mower img-move img-move-2 img-fluid">
+            <img alt="Lawn Mower" src="stock/worker.jpeg" class="mower worker img-move img-move-2 img-fluid">
             <!-- this image is a placeholder so that the container has a responsive height. I am also hiding it on mobile because it is not needed when stacked. Here is more info on why this is needed > https://stackoverflow.com/questions/6319500/how-to-make-the-wrapping-div-element-with-relative-position-match-child-elements?rq=1 -->
-            <img alt="Lawn Mower" src="stock/mower1.jpg" class="img-fluid invisible d-none d-md-block">
+            <img alt="Lawn Mower" src="stock/mower1.jpg" class="invisibleImage img-fluid invisible d-none d-md-block">
         </div>
     
-        <div class="text-center xl:text-left xl:p-16">
-            <p class="basicText2 md:py-10">We use great quality tools that make sure we get the job done as clean as we possibly can. We leave absolutely nothing behind besides a fantastic looking yard!</p>
+        <div class="text-center xl:text-left lg:p-16">
+            <p class="basicText2 py-3 md:py-10">We use great quality tools that make sure we get the job done as clean as we possibly can. We leave absolutely nothing behind besides a fantastic looking yard!</p>
             <br class="para2">
             <p class="para2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis tristique sollicitudin nibh sit amet commodo. Risus viverra adipiscing at in. Tempus iaculis urna id volutpat</p>
             <br class="para3">
-            <div class="para3 grid grid-cols-2 pt-10">
-                <div class="text-center py-8">
+            <div class="para3 grid grid-rows-1 2xl:grid-cols-2 2xl:pt-10">
+                <div class="text-center py-2 lg:py-8">
                     <div align="center"><a class="mainButton" href="#" target="_blank" rel="nofollow noopener noreferrer" draggable="false"><i class="text-white fa fa-file-text"></i> Schedule An Appointment</a></div>
                 </div>
-                <div class="text-center py-8">
+                <div class="text-center py-2 lg:py-8">
                     <div align="center"><a class="mainButton" href="#" target="_blank" rel="nofollow noopener noreferrer" draggable="false"><i class="text-white fa fa-phone"></i> Contact Us</a></div>
                 </div>
             </div>
@@ -98,7 +74,7 @@
     
     </div>
     
-    <div class="text-center md:py-10 xl:grid xl:grid-cols-2 xl:gap-x-16">
+    <div class="text-center md:py-10 2xl:grid 2xl:grid-cols-2 2xl:gap-x-16">
         <div class="xl:p-10">
             <main>
                 <!-- Container for the image gallery -->
@@ -127,22 +103,22 @@
             </main>
         </div>
 
-        <div class="xl:p-10">
-            <p class="titleText tracking-wider md:tracking-tight pr-9 pb-10 xl:tracking-widest">Testimonials</p>
+        <div class="pt-10 md:pt-5 lg:p-10">
+            <p class="titleText tracking-wider md:tracking-widest lg:rounded-3xl">Testimonials</p>
             <Testimonials />
         </div>
     </div>
 
 
-    <div class="text-center pt-3 px-6">
+    <div class="text-center pt-20 lg:pt-3 px-6">
         <p class="basicText tracking-wider font-semibold">
             When you book an appointment with us, we make sure to come prepared!
         </p>
     </div>
 
     <div class="text-center py-8">
-        <div class="text-center py-8">
-            <div align="center"><a class="mainButton2" href="#" target="_blank" rel="nofollow noopener noreferrer" draggable="false"><i class="text-black fa fa-file-text"></i> Schedule An Appointment</a></div>
+        <div class="text-center py-2 lg:py-8">
+            <div align="center"><a class="mainButton2" href="#" target="_blank" rel="nofollow noopener noreferrer" draggable="false"><i class="text-white fa fa-file-text"></i> Schedule An Appointment</a></div>
         </div>
     </div>
 
@@ -151,7 +127,7 @@
     </div>
 
 
-    <div class="text-center xl:py-14">
+    <div class="text-center py-10 lg:py-14">
         <p class="basicText tracking-wider">
             "We take our <b class="text-yellow-300">CLIENTS</b> seriously"
         </p>
@@ -159,11 +135,11 @@
 
     <div class="grid grid-rows-1">
         <div class="xl:p-10 text-center xl:grid xl:grid-cols-2 bg-green-100">
-            <img alt="Lawn Mower" class="mower2 mx-auto" src="stock/mower2.jpg">
+            <img alt="Lawn Mower" class="blueMower mower2 mx-auto" src="stock/mower2.jpg">
             <img alt="Team" class="mower2 mx-auto" src="stock/team.jpeg">
         </div>
         <div class="text-left xl:px-24 xl:py-5">
-            <p class="basicText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="basicText p-3 lg:p-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
     </div>
 
@@ -188,13 +164,41 @@
 
     @media screen and (min-width:0px) and (max-width:768px) {
         main {
-            width: 100vw;
+            width: 95vw;
             display: flex;
             flex-direction: column;
-            margin: 10% auto;
+            margin: 3% auto;
             background-color: #222;
             box-shadow: 0 0 10px black;
-        }	
+        }
+
+        .mainButton {
+            font-size: 15px;
+            font-family: Verdana, sans-serif;
+            color: #fff !important;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: green;
+            padding: 10px;
+            border-radius: 50px;
+            display: inline-block;
+            border: none;
+            transition: all 0.4s ease 0s;
+        }
+
+        .mainButton2 {
+            font-family: Verdana, sans-serif;
+            font-size: 15px;
+            color: white !important;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: rgb(0, 173, 0);
+            padding: 10px;
+            border-radius: 50px;
+            display: inline-block;
+            border: none;
+            transition: all 0.4s ease 0s;
+        }
 
         .para2 {
             display: none;
@@ -218,10 +222,26 @@
         }
 
         .titleText {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: bold;
             font-family: Verdana, sans-serif;
             color: white;
-            font-size: 18px;
+            font-size: 40px;
+            background: green;
+        }
+
+        .coolImage {
+            display: none;
+        }
+
+        .coolImage2 {
+            display: none;
+        }
+
+        .invisibleImage {
+            display: none;
         }
     }
 
@@ -230,10 +250,38 @@
             width: 85vw;
             display: flex;
             flex-direction: column;
-            margin: 10% auto;
+            margin: 3% auto;
             background-color: #222;
             box-shadow: 0 0 10px black;
-        }	
+        }
+
+        .mainButton {
+            font-size: 15px;
+            font-family: Verdana, sans-serif;
+            color: #fff !important;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: green;
+            padding: 10px;
+            border-radius: 50px;
+            display: inline-block;
+            border: none;
+            transition: all 0.4s ease 0s;
+        }
+
+        .mainButton2 {
+            font-family: Verdana, sans-serif;
+            font-size: 15px;
+            color: white !important;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: rgb(0, 173, 0);
+            padding: 10px;
+            border-radius: 50px;
+            display: inline-block;
+            border: none;
+            transition: all 0.4s ease 0s;
+        }
 
         .para2 {
             display: none;
@@ -248,32 +296,70 @@
         .basicText2 {
             color:black;
             font-family: Verdana, sans-serif;
-            font-size: 25px;
+            font-size: 24px;
         }
 
         .titleText {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: bold;
             font-family: Verdana, sans-serif;
             color: white;
-            font-size: 50px;
+            font-size: 60px;
+            background: green;
+        }
+
+        .coolImage, .coolImage2, .invisibleImage, .worker, .blueMower{
+            display: none;
+        }
+
+        .mower2 {
+            width: 650px;
+            height: 450px;
         }
     }
 
     @media screen and (min-width:1024px) and (max-width:1280px) {
         main {
-            width: 75vw;
+            width: 85vw;
             display: flex;
             flex-direction: column;
-            margin: 10% auto;
+            margin: 3% auto;
             background-color: #222;
             box-shadow: 0 0 10px black;
-        }	
+        }
+
+        .mainButton {
+            font-size: 15px;
+            font-family: Verdana, sans-serif;
+            color: #fff !important;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: green;
+            padding: 10px;
+            border-radius: 50px;
+            display: inline-block;
+            border: none;
+            transition: all 0.4s ease 0s;
+        }
+
+        .mainButton2 {
+            font-family: Verdana, sans-serif;
+            font-size: 15px;
+            color: white !important;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: rgb(0, 173, 0);
+            padding: 10px;
+            border-radius: 50px;
+            display: inline-block;
+            border: none;
+            transition: all 0.4s ease 0s;
+        }
 
         .para2 {
-            display: inline-block;
-            color:black;
-            font-family: Verdana, sans-serif;
-            font-size: 20px;
+            display: none;
         }
 
         .basicText {
@@ -285,32 +371,87 @@
         .basicText2 {
             color:black;
             font-family: Verdana, sans-serif;
-            font-size: 25px;
+            font-size: 24px;
         }
 
         .titleText {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: bold;
             font-family: Verdana, sans-serif;
             color: white;
-            font-size: 50px;
+            font-size: 60px;
+            background: green;
+        }
+
+        .coolImage, .coolImage2, .invisibleImage, .worker, .blueMower{
+            display: none;
+        }
+
+        .mower2 {
+            width: 650px;
+            height: 450px;
         }
     }
 
     @media screen and (min-width:1280px) and (max-width:1536px) {
         main {
-            width: 65vw;
+            width: 85vw;
             display: flex;
             flex-direction: column;
-            margin: auto;
+            margin: 3% auto;
             background-color: #222;
             box-shadow: 0 0 10px black;
-        }	
+        }
+
+        .mainButton {
+            font-size: 15px;
+            font-family: Verdana, sans-serif;
+            color: #fff !important;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: green;
+            padding: 10px;
+            border-radius: 50px;
+            display: inline-block;
+            border: none;
+            transition: all 0.4s ease 0s;
+        }
+
+        .mainButton:hover {
+            background: darkgreen;
+            text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+            box-shadow: 0 0 35px black;
+            -webkit-box-shadow: 0px 5px 60px -10px rgba(0,0,0,0.57);
+            -moz-box-shadow: 0px 5px 60px -10px rgba(0,0,0,0.57);
+            transition: all 0.4s ease 0s;
+        }
+
+        .mainButton2 {
+            font-family: Verdana, sans-serif;
+            font-size: 15px;
+            color: white !important;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: rgb(0, 173, 0);
+            padding: 10px;
+            border-radius: 50px;
+            display: inline-block;
+            border: none;
+            transition: all 0.4s ease 0s;
+        }
+
+        .mainButton2:hover {
+            background: lightgreen;
+            box-shadow: 0 0 35px rgb(83, 136, 83);
+            -webkit-box-shadow: 0px 5px 60px -10px rgb(83, 136, 83);
+            -moz-box-shadow: 0px 5px 60px -10px rgb(83, 136, 83);
+            transition: all 0.4s ease 0s;
+        }
 
         .para2 {
-            display: inline-block;
-            color:black;
-            font-family: Verdana, sans-serif;
-            font-size: 20px;
+            display: none;
         }
 
         .basicText {
@@ -322,14 +463,27 @@
         .basicText2 {
             color:black;
             font-family: Verdana, sans-serif;
-            font-size: 25px;
+            font-size: 24px;
         }
 
         .titleText {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: bold;
             font-family: Verdana, sans-serif;
             color: white;
-            font-size: 50px;
+            font-size: 60px;
+            background: green;
+        }
+
+        .coolImage, .coolImage2, .invisibleImage, .worker {
+            display: none;
+        }
+
+        .mower2 {
+            width: 650px;
+            height: 450px;
         }
     }
 
@@ -357,11 +511,10 @@
         }
 
         .mainButton:hover {
-            background: darkgreen;
-            text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
-            box-shadow: 0 0 35px black;
-            -webkit-box-shadow: 0px 5px 60px -10px rgba(0,0,0,0.57);
-            -moz-box-shadow: 0px 5px 60px -10px rgba(0,0,0,0.57);
+            background: rgb(0, 172, 0);
+            box-shadow: 0 0 35px rgb(0, 172, 0);
+            -webkit-box-shadow: 0px 5px 60px -10px rgb(0, 172, 0);
+            -moz-box-shadow: 0px 5px 60px -10px rgb(0, 172, 0);
             transition: all 0.4s ease 0s;
         }
 
@@ -371,7 +524,7 @@
             color: #000000 !important;
             text-transform: uppercase;
             text-decoration: none;
-            background: lightgreen;
+            background: rgb(0, 173, 0);
             padding: 20px;
             border-radius: 50px;
             display: inline-block;
@@ -380,7 +533,7 @@
         }
 
         .mainButton2:hover {
-            background: rgb(112, 184, 112);
+            background: lightgreen;
             box-shadow: 0 0 35px rgb(83, 136, 83);
             -webkit-box-shadow: 0px 5px 60px -10px rgb(83, 136, 83);
             -moz-box-shadow: 0px 5px 60px -10px rgb(83, 136, 83);
@@ -439,37 +592,15 @@
         }
 
         .titleText {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: bold;
             font-family: Verdana, sans-serif;
             color: white;
             font-size: 50px;
+            background: green;
         }
-
-        .coolImage {
-	        position: absolute;
-            top: 270%;
-            left: -4%;
-		    transform: translate(-100%, 0) rotate(-30deg);
-		    transform-origin: 100% 100%;
-		    transition: transform 0.4s;
-	    }
-
-        .curious {
-		    transform: translate(15%, 0) rotate(0deg);
-	    }
-
-        .coolImage2 {
-	        position: absolute;
-            top: 268%;
-            right: 3%;
-		    transform: translate(100%, 0) rotate(30deg);
-		    transform-origin: 100% 100%;
-		    transition: transform 0.4s;
-	    }
-
-        .curious2 {
-		    transform: translate(12%, 0) rotate(0deg);
-	    }
     }
 
 </style>
