@@ -82,8 +82,8 @@
 }
 
 @media screen and (min-width:1280px) and (max-width:1536px) {
-        /* Hide the images by default */
-        .mySlides {
+    /* Hide the images by default */
+    .mySlides {
         display: none;
     }
 
@@ -130,9 +130,9 @@
 }
 
 </style>
-
+    
 <!-- Full-width images with number text -->
-<div class="mySlides" class:show={imageShowing}>
-    <div class="numbertext">{slideNumber} / {totalSlides}</div>
-        <img src={image} title={attr} alt={altTag}>
+ <div class="mySlides" class:show={imageShowing}>
+     <div class="numbertext">{slideNumber} / {totalSlides}</div>
+    <img src={image} title={attr} alt={altTag}>
 </div>
