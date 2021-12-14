@@ -116,9 +116,9 @@
     }
 
     @media screen and (min-width:1280px) and (max-width:1536px) {
-                /* Container for image text */
-                .caption-container {
-            font-size: 35px;
+        /* Container for image text */
+        .caption-container {
+            font-size: 25px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -138,7 +138,7 @@
             margin-top: -50px; */
             color: white;
             font-weight: bold;
-            font-size: 50px;
+            font-size: 30px;
             border-radius: 0 3px 3px 0;
             user-select: none;
             -webkit-user-select: none;
@@ -213,9 +213,11 @@
 
 </style>
 
-<!-- Image text -->
-<div class="caption-container">
-    <a class="prev" on:click={() => dispatch('prevClick')}>&#10094;</a>
-    <p id="caption">{caption}</p>
-    <a class="next" on:click={() => dispatch('nextClick')}>&#10095;</a>
+<div class="relative">
+    <!-- Image text -->
+    <div class="caption-container">
+        <a class="prev" on:click={() => dispatch('prevClick')}>&#10094;</a>
+        <p id="caption">{caption}</p>
+        <a class="next" on:click={() => dispatch('nextClick')}>&#10095;</a>
+    </div>
 </div>
