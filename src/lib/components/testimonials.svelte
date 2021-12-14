@@ -78,17 +78,17 @@
     justify-content: center;
     font-family: Verdana, sans-serif;
     background: rgb(228, 228, 228);
-    font-size: 15px;
-    width: 600px;
-    height: 175px;
+    font-size: 13px;
+    width: 450px;
+    height: 110px;
     box-shadow: 0 10px 15px black;
     }
 
     .avatar {
     vertical-align: middle;
     background: lightblue;
-    width: 150px;
-    height: 150px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     box-shadow: 0 10px 15px black;
     }
@@ -104,6 +104,7 @@
     font-size: 18px;
     width: 650px;
     height: 150px;
+    box-shadow: 0 10px 15px black;
     }
 
     .avatar {
@@ -112,6 +113,7 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    box-shadow: 0 10px 15px black;
 }
 }
 
