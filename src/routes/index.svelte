@@ -711,7 +711,7 @@
         z-index: 1;
 	    position: absolute;
         top: 10%;
-        left: 70%;
+        left: 75%;
 	    transform: translate(150%, 0);
 	    transform-origin: 100% 100%;
 	    transition: transform 0.4s;
