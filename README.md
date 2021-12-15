@@ -1,38 +1,31 @@
-# create-svelte
+<h1>Practice Website</h2>
+This is a website for a made up lawn care company I did in order to practice some of my skills and creativity. My main focus of this project was to touch on responsiveness utilizing tailwind's built in media queries. I created the logo using Photoshop in order to give the website a more professional view. Responsiveness is the most important aspect nowadays in creating websites so this was a great opportunity for me to practice with just that.
+<br>
+<br>
+<p align="center">
+<b>below are examples of how the site is displayed on different screen sizes</b>
+</p>
+<br>
+<h2>Wide Screen</h2>
+<p align="left">
+<a href="https://ibb.co/Yd2QFJb"><img src="https://i.ibb.co/wQygF8Y/wide-Screen1.png" alt="wide-Screen1" border="0"></a>
+<a href="https://ibb.co/mDY1LqN"><img src="https://i.ibb.co/w0b39Wc/wide-Screen2.png" alt="wide-Screen2" border="0"></a>
+</p>
+<h2>Large Screen</h2>
+<p align="left">
+<a href="https://ibb.co/y5Lgc30"><img src="https://i.ibb.co/J2Xrwhn/large-Screen1.png" alt="large-Screen1" border="0"></a>
+<a href="https://ibb.co/DG9n3nf"><img src="https://i.ibb.co/q0NwbwY/large-Screen2.png" alt="large-Screen2" border="0"></a>
+</p>
+<h2>iPad</h2>
+<p float="left">
+<a href="https://ibb.co/VmY4HC4"><img src="https://i.ibb.co/hfFzXdz/ipad-Screen1.png" width="400" alt="ipad-Screen1" border="0"></a>
+<a href="https://ibb.co/nnW8LVt"><img src="https://i.ibb.co/k9d6Srv/ipad-Screen2.png" width="400" alt="ipad-Screen2" border="0"></a>
+</p>
+<h2>iPhone X</h2>
+<p float="left">
+<a href="https://ibb.co/KqBmtJC"><img src="https://i.ibb.co/7WBb3q7/iphone-Screen1.png" width="200" alt="iphone-Screen1" border="0"></a>
+<a href="https://ibb.co/qnzpGfm"><img src="https://i.ibb.co/4fcpyG4/iphone-Screen2.png" width="200" alt="iphone-Screen2" border="0"></a>
+<a href="https://ibb.co/jgw02Y7"><img src="https://i.ibb.co/yWkv1CL/iphone-Screen3.png" width="200" alt="iphone-Screen3" border="0"></a>
+</p>
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte);
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm init svelte@next
-
-# create a new project in my-app
-npm init svelte@next my-app
-```
-
-> Note: the `@next` is temporary
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
-
-```bash
-npm run build
-```
-
-> You can preview the built app with `npm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
+Thank you!
