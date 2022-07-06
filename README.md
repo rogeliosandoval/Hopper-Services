@@ -1,4 +1,14 @@
 <h1>Practice Website</h2>
+<h3>Framework Used:</h3>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" width="60px;"/>
+<h3>Languages Used:</h3>
+<p float="left">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" width="60px;"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="60px;"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" width="60px;"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" width="60px;"/>
+</p>
+<br>
 This is a website for a made up lawn care company I did in order to practice some of my skills and creativity. My main focus of this project was to touch on responsiveness utilizing tailwind's built in media queries. I created the logo using Photoshop in order to give the website a more professional view. Responsiveness is the most important aspect nowadays in creating websites so this was a great opportunity for me to practice with just that.
 <br>
 <br>
