@@ -1,4 +1,4 @@
-<h1>Practice Website</h2>
+<h1>Hopper Services</h2>
 <h3>Framework Used:</h3>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" width="60px;"/>
 <h3>Languages Used:</h3>
