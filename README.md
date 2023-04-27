@@ -37,4 +37,3 @@ This is a website for a made up lawn care company I did in order to practice som
 <img src="thumbnails/iphone-Screen2.png" alt="pic8" width="25%" height="auto">
 <img src="thumbnails/iphone-Screen3.png" alt="pic9" width="25%" height="auto">
 </p>
-Thank you!
