@@ -16,7 +16,6 @@ This is a website for a made up lawn care company I did in order to practice som
 <p align="center">
 <b>below are examples of how the site is displayed on different screen sizes</b>
 </p>
-<br>
 <h2>Wide Screen</h2>
 <p align="left">
 <img src="thumbnails/wide-Screen1.png" alt="pic1" width="100%" height="auto">
@@ -38,5 +37,4 @@ This is a website for a made up lawn care company I did in order to practice som
 <img src="thumbnails/iphone-Screen2.png" alt="pic8" width="25%" height="auto">
 <img src="thumbnails/iphone-Screen3.png" alt="pic9" width="25%" height="auto">
 </p>
-<br>
 Thank you!
