@@ -19,24 +19,24 @@ This is a website for a made up lawn care company I did in order to practice som
 <br>
 <h2>Wide Screen</h2>
 <p align="left">
-<a href="https://ibb.co/Yd2QFJb"><img src="https://i.ibb.co/wQygF8Y/wide-Screen1.png" alt="wide-Screen1" border="0"></a>
-<a href="https://ibb.co/mDY1LqN"><img src="https://i.ibb.co/w0b39Wc/wide-Screen2.png" alt="wide-Screen2" border="0"></a>
+<img src="thumbnails/wide-Screen1.png" alt="pic1" width="100%" height="auto">
+<img src="thumbnails/wide-Screen2.png" alt="pic2" width="100%" height="auto">
 </p>
 <h2>Large Screen</h2>
 <p align="left">
-<a href="https://ibb.co/y5Lgc30"><img src="https://i.ibb.co/J2Xrwhn/large-Screen1.png" alt="large-Screen1" border="0"></a>
-<a href="https://ibb.co/DG9n3nf"><img src="https://i.ibb.co/q0NwbwY/large-Screen2.png" alt="large-Screen2" border="0"></a>
+<img src="thumbnails/large-Screen1.png" alt="pic3" width="100%" height="auto">
+<img src="thumbnails/large-Screen2.png" alt="pic4" width="100%" height="auto">
 </p>
 <h2>iPad</h2>
 <p float="left">
-<a href="https://ibb.co/VmY4HC4"><img src="https://i.ibb.co/hfFzXdz/ipad-Screen1.png" width="400" alt="ipad-Screen1" border="0"></a>
-<a href="https://ibb.co/nnW8LVt"><img src="https://i.ibb.co/k9d6Srv/ipad-Screen2.png" width="400" alt="ipad-Screen2" border="0"></a>
+<img src="thumbnails/ipad-Screen1.png" alt="pic5" width="40%" height="auto">
+<img src="thumbnails/ipad-Screen2.png" alt="pic6" width="40%" height="auto">
 </p>
 <h2>iPhone X</h2>
 <p float="left">
-<a href="https://ibb.co/KqBmtJC"><img src="https://i.ibb.co/7WBb3q7/iphone-Screen1.png" width="200" alt="iphone-Screen1" border="0"></a>
-<a href="https://ibb.co/qnzpGfm"><img src="https://i.ibb.co/4fcpyG4/iphone-Screen2.png" width="200" alt="iphone-Screen2" border="0"></a>
-<a href="https://ibb.co/jgw02Y7"><img src="https://i.ibb.co/yWkv1CL/iphone-Screen3.png" width="200" alt="iphone-Screen3" border="0"></a>
+<img src="thumbnails/iphone-Screen1.png" alt="pic7" width="25%" height="auto">
+<img src="thumbnails/iphone-Screen2.png" alt="pic8" width="25%" height="auto">
+<img src="thumbnails/iphone-Screen3.png" alt="pic9" width="25%" height="auto">
 </p>
-
+<br>
 Thank you!
